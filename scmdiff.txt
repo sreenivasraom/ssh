@@ -1,42 +1,90 @@
-diff --git a/classes/CreatingAccount5.cls b/classes/CreatingAccount5.cls
+diff --git a/objects/Account.object b/objects/Account.object
 new file mode 100644
-index 0000000..4b26bd7
+index 0000000..d999337
 --- /dev/null
-+++ b/classes/CreatingAccount5.cls
-@@ -0,0 +1,10 @@
-+public Class CreatingAccount5
-+{
-+public Account createAccount(String name)  //method to create account
-+{
-+//From demo1
-+Account acc2 = new Account();
-+acc2.Name = name;
-+return acc2;
-+}
-+}
-\ No newline at end of file
-diff --git a/classes/CreatingAccount5.cls-meta.xml b/classes/CreatingAccount5.cls-meta.xml
-new file mode 100644
-index 0000000..9aeda45
---- /dev/null
-+++ b/classes/CreatingAccount5.cls-meta.xml
-@@ -0,0 +1,5 @@
++++ b/objects/Account.object
+@@ -0,0 +1,21 @@
 +<?xml version="1.0" encoding="UTF-8"?>
-+<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
-+    <apiVersion>34.0</apiVersion>
-+    <status>Active</status>
-+</ApexClass>
++<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
++    <fields>
++        <fullName>Active__c</fullName>
++        <externalId>false</externalId>
++        <label>Active</label>
++        <picklist>
++            <picklistValues>
++                <fullName>No</fullName>
++                <default>false</default>
++            </picklistValues>
++            <picklistValues>
++                <fullName>Yes</fullName>
++                <default>false</default>
++            </picklistValues>
++            <sorted>false</sorted>
++        </picklist>
++        <trackFeedHistory>false</trackFeedHistory>
++        <type>Picklist</type>
++    </fields>
++</CustomObject>
 diff --git a/package.xml b/package.xml
-new file mode 100644
-index 0000000..ac72d0c
---- /dev/null
+index ac72d0c..685996a 100644
+--- a/package.xml
 +++ b/package.xml
-@@ -0,0 +1,8 @@
-+<?xml version="1.0" encoding="UTF-8"?>
-+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-+    <types>
-+        <members>CreatingAccount5</members>
-+        <name>ApexClass</name>
-+    </types>
-+    <version>31.0</version>
-+</Package>
+@@ -1,8 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+     <types>
+-        <members>CreatingAccount5</members>
+-        <name>ApexClass</name>
++        <members>Account.Active__c</members>
++        <name>CustomField</name>
+     </types>
+     <version>31.0</version>
+ </Package>
+diff --git a/scmdiff.txt b/scmdiff.txt
+new file mode 100644
+index 0000000..19dae58
+--- /dev/null
++++ b/scmdiff.txt
+@@ -0,0 +1,42 @@
++diff --git a/classes/CreatingAccount5.cls b/classes/CreatingAccount5.cls
++new file mode 100644
++index 0000000..4b26bd7
++--- /dev/null
+++++ b/classes/CreatingAccount5.cls
++@@ -0,0 +1,10 @@
+++public Class CreatingAccount5
+++{
+++public Account createAccount(String name)  //method to create account
+++{
+++//From demo1
+++Account acc2 = new Account();
+++acc2.Name = name;
+++return acc2;
+++}
+++}
++\ No newline at end of file
++diff --git a/classes/CreatingAccount5.cls-meta.xml b/classes/CreatingAccount5.cls-meta.xml
++new file mode 100644
++index 0000000..9aeda45
++--- /dev/null
+++++ b/classes/CreatingAccount5.cls-meta.xml
++@@ -0,0 +1,5 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<ApexClass xmlns="http://soap.sforce.com/2006/04/metadata">
+++    <apiVersion>34.0</apiVersion>
+++    <status>Active</status>
+++</ApexClass>
++diff --git a/package.xml b/package.xml
++new file mode 100644
++index 0000000..ac72d0c
++--- /dev/null
+++++ b/package.xml
++@@ -0,0 +1,8 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+++    <types>
+++        <members>CreatingAccount5</members>
+++        <name>ApexClass</name>
+++    </types>
+++    <version>31.0</version>
+++</Package>
