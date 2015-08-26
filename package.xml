@@ -4,5 +4,10 @@
         <members>CreatingAccount1</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>Add__c</members>
+        <members>Project__c</members>
+        <name>CustomObject</name>
+    </types>
     <version>31.0</version>
 </Package>
